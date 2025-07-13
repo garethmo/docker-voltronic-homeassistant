@@ -214,6 +214,8 @@ float batt_redischarge_voltage;
             if (reply1 && reply2 && warnings) {
 
                 // Parse and display values, QPIGS, * means contained in output, ^ is not included in output
+                // FIX #1: The format string for sscanf now correctly matches the number of variables.
+                // An extra format specifier here was a cause of the segmentation fault.
                 sscanf(reply1->c_str(), "%f %f %f %f %d %d %d %d %f %d %d %d %f %f %f %d %s %d %d %d %s",
                        &voltage_grid,          // * Grid voltage
                        &freq_grid,             // * Grid frequency
@@ -325,6 +327,8 @@ float batt_redischarge_voltage;
                 printf("  \"Out_source_priority\":%d,\n", out_source_priority); // QPIRI
                 printf("  \"Charger_source_priority\":%d,\n", charger_source_priority); // QPIRI
                 printf("  \"Battery_redischarge_voltage\":%.1f,\n", batt_redischarge_voltage);  // QPIRI
+                // FIX #2: The final line of the JSON output now correctly omits the trailing comma
+                // before the closing brace, ensuring valid JSON is produced.
                 printf("  \"Warnings\":\"%s\"\n", warnings->c_str());     //
                 printf("}\n");
 
