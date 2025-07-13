@@ -114,7 +114,7 @@ registerTopic "Battery_recharge_voltage" "V" "current-dc" "voltage" "Battery rec
 registerTopic "Battery_redischarge_voltage" "V" "battery-negative" "voltage" "Battery redischarge voltage"
 registerTopic "Battery_under_voltage" "V" "current-dc" "voltage" "Battery under voltage"
 registerTopic "Battery_voltage" "V" "battery-outline" "voltage" "Battery voltage"
-registerTopic "Battery_voltage_offset_for_fans_on" "10mV" "battery-outline" "voltage" "Battery voltage offset for fans on"
+registerTopic "Battery_voltage_offset_for_fans_on" "V" "battery-outline" "voltage" "Battery voltage offset for fans on"
 registerTopic "Bus_voltage" "V" "details" "voltage" "Bus voltage"
 registerModeTopic "Charger_source_priority" "" "solar-power" "None" "Charger source priority"
 registerModeTopic "Charging_to_floating_mode" "" "solar-power" "None" "Charging to floating mode"
