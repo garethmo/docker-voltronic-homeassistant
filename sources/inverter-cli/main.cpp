@@ -117,11 +117,11 @@ float pv_input_watts;
 // float load_watthour = 0;
 float scc_voltage;
 int batt_discharge_current;
-char device_status[8];
+char device_status[9];
 int battery_voltage_offset_for_fans_on;
 int eeprom_version;
 int pv_charging_power;
-char device_status2[3];
+char device_status2[4];
 
 // Reply2
 float grid_voltage_rating;
