@@ -280,11 +280,11 @@ float batt_redischarge_voltage;
                 // It appears on further inspection of the documentation, that the input current is actually
                 // current that is going out to the battery at battery voltage (NOT at PV voltage).  This
                 // would explain the larger discrepancy we saw before.
-                pv_input_watts = (scc_voltage * pv_input_current) * wattfactor;
+                //pv_input_watts = (scc_voltage * pv_input_current) * wattfactor;
 
                 // Calculate watt-hours generated per run interval period (given as program argument)
-                pv_input_watthour = pv_input_watts;
-                load_watthour = (float)load_watt / (3600000 / 1);
+               // pv_input_watthour = pv_input_watts;
+               // load_watthour = (float)load_watt / (3600000 / 1);
                 // Print as JSON (output is expected to be parsed by another tool...)
                 printf("{\n");
 
