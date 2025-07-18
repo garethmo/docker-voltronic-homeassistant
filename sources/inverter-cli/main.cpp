@@ -283,9 +283,8 @@ float batt_redischarge_voltage;
                 pv_input_watts = (scc_voltage * pv_input_current) * wattfactor;
 
                 // Calculate watt-hours generated per run interval period (given as program argument)
-                // pv_input_watthour = pv_input_watts / (3600000 / runinterval);
-                // load_watthour = (float)load_watt / (3600000 / runinterval);
-
+                pv_input_watthour = pv_input_watts;
+                load_watthour = (float)load_watt / (3600000 / 1);
                 // Print as JSON (output is expected to be parsed by another tool...)
                 printf("{\n");
 
@@ -297,11 +296,11 @@ float batt_redischarge_voltage;
                 printf("  \"PV_in_voltage\":%.1f,\n", pv_input_voltage);  // QPIGS
                 printf("  \"PV_in_current\":%.1f,\n", pv_input_current);  // QPIGS
                 printf("  \"PV_in_watts\":%.1f,\n", pv_input_watts);      // = (scc_voltage * pv_input_current) * wattfactor;
-                // printf("  \"PV_in_watthour\":%.4f,\n", pv_input_watthour);
+                printf("  \"PV_in_watthour\":%.4f,\n", pv_input_watthour);
                 printf("  \"SCC_voltage\":%.4f,\n", scc_voltage);         // QPIGS
                 printf("  \"Load_pct\":%d,\n", load_percent);             // QPIGS
                 printf("  \"Load_watt\":%d,\n", load_watt);               // QPIGS
-                // printf("  \"Load_watthour\":%.4f,\n", load_watthour);
+                printf("  \"Load_watthour\":%.4f,\n", load_watthour);
                 printf("  \"Load_va\":%d,\n", load_va);                   // QPIGS
                 printf("  \"Bus_voltage\":%d,\n", voltage_bus);           // QPIGS
                 printf("  \"Heatsink_temperature\":%d,\n", temp_heatsink);// QPIGS
