@@ -12,10 +12,12 @@ services:
       dockerfile: Dockerfile.dev
 
 
-    container_name: voltronic-mqtt
-
+    container_name: inverter
+    restart: unless-stopped
     privileged: true
-    restart: always
+    # ADD THE PORTS SECTION
+    ports:
+      - "8000:8000"
 
     volumes:
         - ./config/:/etc/inverter/

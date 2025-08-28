@@ -10,6 +10,9 @@ UNBUFFER='stdbuf -i0 -oL -eL'
 $UNBUFFER /opt/inverter-mqtt/mqtt-init.sh
 #echo "[INFO] MQTT topic initialization complete."
 
+# Start the web server in the background
+echo "Starting web server..."
+uvicorn web_server:app --host 0.0.0.0 --port 8000 &
 # echo "[INFO] Starting main control loop..."
 # This loop now runs both the push (polling) and subscriber (listening)
 # scripts one after the other, preventing them from conflicting over the
